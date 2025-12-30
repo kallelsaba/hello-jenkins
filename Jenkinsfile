@@ -12,7 +12,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Test du fichier index.html'
-                bat 'if exist index.html (echo index.html existe) else (exit 1)'
+                bat 'if exist "%WORKSPACE%\\index.html" (echo index.html existe) else (exit 1)'
+                bat 'type "%WORKSPACE%\\index.html"'
             }
         }
 
