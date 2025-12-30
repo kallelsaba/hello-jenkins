@@ -20,10 +20,13 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Déploiement'
+                // Crée le dossier si besoin
                 bat 'mkdir "C:\\Users\\lenovo\\hello-jenkins-deploy" 2>nul'
+                // Copie index.html vers le dossier de déploiement
                 bat 'copy "%WORKSPACE%\\index.html" "C:\\Users\\lenovo\\hello-jenkins-deploy\\"'
             }
         }
+
     }
 
     post {
